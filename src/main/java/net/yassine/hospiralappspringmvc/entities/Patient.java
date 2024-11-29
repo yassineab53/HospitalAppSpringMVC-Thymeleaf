@@ -5,9 +5,7 @@ import lombok.*;
 
 import java.util.Date;
 
-/**
- * @author $ {USER}
- **/
+
 @Entity
 @Table(name="PATIENTS")
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString @Builder
