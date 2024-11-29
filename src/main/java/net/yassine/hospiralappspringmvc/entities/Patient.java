@@ -1,7 +1,6 @@
 package net.yassine.hospiralappspringmvc.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
@@ -13,6 +12,7 @@ import java.util.Date;
 @Table(name="PATIENTS")
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString @Builder
 public class Patient {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
     private String prenom;
