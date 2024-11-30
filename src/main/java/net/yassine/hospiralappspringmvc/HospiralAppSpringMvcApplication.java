@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
+import java.util.List;
 
 @SpringBootApplication
 public class HospiralAppSpringMvcApplication {
@@ -49,6 +50,12 @@ public class HospiralAppSpringMvcApplication {
             patientRepository.save(p1);
             patientRepository.save(p2);
             patientRepository.save(p3);
+
+            List<Patient> patients = patientRepository.findAll();
+            patients.forEach(p->{
+                System.out.println(p.toString());
+            });
+
         };
     }
 
