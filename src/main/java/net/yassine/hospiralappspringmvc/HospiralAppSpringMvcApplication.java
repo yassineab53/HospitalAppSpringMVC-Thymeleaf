@@ -14,7 +14,6 @@ import java.util.List;
 public class HospiralAppSpringMvcApplication {
 
     public static void main(String[] args) {
-
         SpringApplication.run(HospiralAppSpringMvcApplication.class, args);
     }
 
@@ -26,8 +25,9 @@ public class HospiralAppSpringMvcApplication {
                 //code
             }
         };*/
+        // using Lambda Expression
         return args -> {
-            //premier solution pour creer des objets : NoArgsConstructor
+            //premier solution pour creer des objets : NoArgsConstructor :  le constructeur sans parametres
             Patient p1 = new Patient();
             p1.setNom("Abbou");
             p1.setPrenom("Yassine");
@@ -39,6 +39,8 @@ public class HospiralAppSpringMvcApplication {
             Patient p2 = new Patient(null, "Abbou", "Aymane", new Date(), 50, false);
 
             //3eme solution : en utilisant @Builder : design pattern
+            // pourquoi le builder ?? parceque on peut specifier les parametres qu'on a besoin
+            // par contre au constructeur avec parametre il faut tt les parametres + l'ordre est important
             Patient p3 = Patient.builder()
                     .nom("Hassani")
                     .prenom("Achraf")
