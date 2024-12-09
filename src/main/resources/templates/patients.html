@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Patients</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
 <body>
-    <h3>Liste des patients</h3>
-    <table>
-        <thead>
-        <tr>
-            <td>ID</td> <td>Nom</td> <td>Prenom</td> <td>Date</td> <td>Score</td> <td>Malade</td>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="p:${listPatients}">
-            <td th:text="${p.id}"></td>
-            <td th:text="${p.nom}"></td>
-            <td th:text="${p.prenom}"></td>
-            <td th:text="${p.dateNaissance}"></td>
-            <td th:text="${p.score}"></td>
-            <td th:text="${p.malade}"></td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="p-3 m-3">
+        <div class="card">
+            <div class="card-header">Liste de Patients</div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>ID</td> <td>Nom</td> <td>Prenom</td> <td>Date</td> <td>Score</td> <td>Malade</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="p:${listPatients}">
+                        <td th:text="${p.id}"></td>
+                        <td th:text="${p.nom}"></td>
+                        <td th:text="${p.prenom}"></td>
+                        <td th:text="${p.dateNaissance}"></td>
+                        <td th:text="${p.score}"></td>
+                        <td th:text="${p.malade}"></td>
+                        <td>
+                            <a class="btn btn-danger" th:href="@{deletePatient(id=${p.id})}">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>
