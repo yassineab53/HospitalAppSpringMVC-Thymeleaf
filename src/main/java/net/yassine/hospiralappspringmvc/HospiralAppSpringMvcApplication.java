@@ -38,6 +38,7 @@ public class HospiralAppSpringMvcApplication {
             //2eme solution pour creer des objets : AllArgsConstructor
             Patient p2 = new Patient(null, "Abbou", "Aymane", new Date(), 50, false);
 
+
             //3eme solution : en utilisant @Builder : design pattern
             // pourquoi le builder ?? parceque on peut specifier les parametres qu'on a besoin
             // par contre au constructeur avec parametre il faut tt les parametres + l'ordre est important
@@ -48,10 +49,27 @@ public class HospiralAppSpringMvcApplication {
                     .malade(false)
                     .score(10)
                     .build();
+            Patient p4 = Patient.builder()
+                    .nom("Majni")
+                    .prenom("Salma")
+                    .dateNaissance(new Date())
+                    .malade(true)
+                    .score(15)
+                    .build();
+
+            Patient p5 = Patient.builder()
+                            .prenom("Aya")
+                                    .malade(true).build();
+
 
             patientRepository.save(p1);
             patientRepository.save(p2);
             patientRepository.save(p3);
+            patientRepository.save(p4);
+            patientRepository.save(p5);
+
+
+
 
             List<Patient> patients = patientRepository.findAll();
             patients.forEach(p->{
