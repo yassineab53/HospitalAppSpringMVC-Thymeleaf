@@ -30,9 +30,9 @@
                     </tr>
                     </tbody>
                 </table>
-                <ul>
+                <ul class="nav nav-pills">
                     <li th:each="page, status : ${pages}">
-                        <a th:text="${status.index}"></a>
+                        <a class="btn btn-info" th:text="${status.index}"></a>
                     </li>
                 </ul>
             </div>
