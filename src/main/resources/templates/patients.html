@@ -10,6 +10,11 @@
         <div class="card">
             <div class="card-header">Liste de Patients</div>
             <div class="card-body">
+                <form method="get" th:action="@{/index}">
+                    <label>Keyword</label>
+                    <input type="text" name="keyword">
+                    <button class="btn btn-outline-info">Search</button>
+                </form>
                 <table class="table">
                     <thead>
                     <tr>
