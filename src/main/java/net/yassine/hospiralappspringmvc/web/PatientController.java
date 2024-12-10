@@ -23,6 +23,7 @@ public class PatientController {
 
     @GetMapping("/index")
     public String index(Model model,
+                        // @RequestParam for default values
                         @RequestParam(name = "page", defaultValue = "0") int page,
                         @RequestParam(name = "size", defaultValue = "5") int size){
 
