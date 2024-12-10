@@ -25,7 +25,7 @@
                         <td th:text="${p.score}"></td>
                         <td th:text="${p.malade}"></td>
                         <td>
-                            <a class="btn btn-danger" th:href="@{deletePatient(id=${p.id})}">Delete</a>
+                            <a onclick="return confirm('Are you sure ?')" class="btn btn-danger" th:href="@{deletePatient(id=${p.id})}">Delete</a>
                         </td>
                     </tr>
                     </tbody>
