@@ -3,6 +3,8 @@ package net.yassine.hospiralappspringmvc.web;
 import net.yassine.hospiralappspringmvc.entities.Patient;
 import net.yassine.hospiralappspringmvc.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +24,9 @@ public class PatientController {
     @GetMapping("/index")
     public String index(Model model){
         List<Patient> patients = patientRepository.findAll();
+        //en utilisant la pagination
+        //Page<Patient> patients = patientRepository.findAll(PageRequest.of(0, 5));
         model.addAttribute("listPatients", patients);
-
         return "patients";
     }
 

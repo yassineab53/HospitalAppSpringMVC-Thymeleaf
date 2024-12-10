@@ -58,7 +58,11 @@ public class HospiralAppSpringMvcApplication {
                     .build();
 
             Patient p5 = Patient.builder()
+                    .nom("Sadki")
                             .prenom("Aya")
+                    .dateNaissance(new Date())
+                    .malade(false)
+                    .score(14)
                                     .malade(true).build();
 
 
@@ -67,6 +71,8 @@ public class HospiralAppSpringMvcApplication {
             patientRepository.save(p3);
             patientRepository.save(p4);
             patientRepository.save(p5);
+
+
 
 
 
