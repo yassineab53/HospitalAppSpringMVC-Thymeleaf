@@ -30,6 +30,11 @@
                     </tr>
                     </tbody>
                 </table>
+                <ul>
+                    <li th:each="page: ${pages}">
+                        <a th:text="${page}"></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
