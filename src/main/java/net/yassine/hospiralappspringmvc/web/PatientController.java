@@ -22,7 +22,10 @@ public class PatientController {
     }*/
 
     @GetMapping("/index")
-    public String index(Model model, int page, int size){
+    public String index(Model model,
+                        @RequestParam(name = "page", defaultValue = "0") int page,
+                        @RequestParam(name = "size", defaultValue = "5") int size){
+
         //List<Patient> patients = patientRepository.findAll();
         //en utilisant la pagination
         Page<Patient> patients = patientRepository.findAll(PageRequest.of(page, size));
