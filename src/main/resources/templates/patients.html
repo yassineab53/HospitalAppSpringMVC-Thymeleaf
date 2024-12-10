@@ -31,8 +31,8 @@
                     </tbody>
                 </table>
                 <ul>
-                    <li th:each="page: ${pages}">
-                        <a th:text="${page}"></a>
+                    <li th:each="page, status : ${pages}">
+                        <a th:text="${status.index}"></a>
                     </li>
                 </ul>
             </div>
