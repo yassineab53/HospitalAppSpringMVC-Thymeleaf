@@ -33,7 +33,7 @@ public class PatientController {
         //en utilisant la pagination
         //Page<Patient> pagePatients = patientRepository.findAll(PageRequest.of(page, size));
         //
-        Page<Patient> pagePatients = patientRepository.findByNomContainsIgnoreCase(keyword, PageRequest.of(page, size));
+        Page<Patient> pagePatients = patientRepository.findByNomContainsIgnoreCaseOrPrenomContainingIgnoreCase(keyword,keyword, PageRequest.of(page, size));
         model.addAttribute("listPatients", pagePatients.getContent());
         model.addAttribute("pages", new int[pagePatients.getTotalPages()]);
         model.addAttribute("currentPage", page);

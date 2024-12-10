@@ -8,5 +8,5 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PatientRepository extends JpaRepository<Patient, Long> {
-    Page<Patient> findByNomContainsIgnoreCase(String keyword, Pageable pageable);
+    Page<Patient> findByNomContainsIgnoreCaseOrPrenomContainingIgnoreCase(String nom, String prenom, Pageable pageable);
 }
