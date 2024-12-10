@@ -22,10 +22,10 @@ public class PatientController {
     }*/
 
     @GetMapping("/index")
-    public String index(Model model){
+    public String index(Model model, int page, int size){
         //List<Patient> patients = patientRepository.findAll();
         //en utilisant la pagination
-        Page<Patient> patients = patientRepository.findAll(PageRequest.of(0, 5));
+        Page<Patient> patients = patientRepository.findAll(PageRequest.of(page, size));
         model.addAttribute("listPatients", patients);
         return "patients";
     }
